@@ -1,0 +1,29 @@
+card_holder
+-
+id SERIAL PK
+name VARCHAR(255)
+
+
+credit_card
+-
+card VARCHAR(20)
+id_card_holder INT FK >- card_holder.id
+
+merchant
+-
+id SERIAL PK
+name VARCHAR(255)
+id_merchant_category INT FK >- merchant_category.id
+
+merchant_category
+-
+id SERIAL PK
+name VARCHAR(255)
+
+transaction
+-
+id SERIAL PK
+date DATETIME
+amount MONEY
+card VARCHAR(20) FK - credit_card.card
+id_merchant INT FK >- merchant.id
